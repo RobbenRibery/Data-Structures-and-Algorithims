@@ -1,6 +1,10 @@
+from operator import delitem
+from typing import List
+
+
 class Codec:
 
-    def encode(self, strs):
+    def encode(self, strs:List[str]) ->str:
         """
         Encodes a list of strings to a single string.
         
