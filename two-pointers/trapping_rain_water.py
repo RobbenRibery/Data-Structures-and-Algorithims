@@ -1,9 +1,7 @@
-from audioop import maxpp
-from turtle import left
-
+from typing import List
 
 class Solution(object):
-    def trap_condense(self, height):
+    def trap(self, height:List[int]):
         """
         :type height: List[int]
         :rtype: int
@@ -15,12 +13,13 @@ class Solution(object):
         max_height = 0 
         max_i = 0
         
-        # collect the maximum value (O(N))
+        # update the maximum value and its index (O(N))
         for i in range(len(height)): 
             if height[i] > max_height: 
                 max_height = height[i]
                 max_i = i 
 
+        # initilase 
         maxes =  [height[left_start], height[right_start]]
         resses = [
             height[left_start] * max((max_i-left_start-1),0), 
