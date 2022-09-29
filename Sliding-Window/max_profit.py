@@ -1,5 +1,6 @@
+from typing import List
 class Solution(object):
-    def maxProfit(self, prices):
+    def maxProfit(self, prices:List[int]):
         """
         :type prices: List[int]
         :rtype: int
@@ -22,8 +23,6 @@ class Solution(object):
                 else: 
 
                     if prices[j] < buy: 
-
-                        #res = sell-buy
 
                         buy = prices[j] 
                         sell = buy
