@@ -8,6 +8,7 @@ class Solution(object):
         """ 
         count_map_s1, w, matched = Counter(s1), len(s1), 0
         
+        # O(len(s2))
         for i in range(len(s2)): 
             
             # decrease the count and increase the match 
@@ -22,7 +23,6 @@ class Solution(object):
                 # if all the occureances are matched for the previous character
                 if count_map_s1[s2[i-w]] == 0:
                     # we still must remove 1 from the matched count, the reason is that the 
-                    # 
                         matched -=1 
                 count_map_s1[s2[i-w]] += 1 
                     
