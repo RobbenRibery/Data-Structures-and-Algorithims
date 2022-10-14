@@ -1,2 +1,6 @@
-# Data-Structures-and-Algorithims
-This is the collaborative between Eric and Suraj for building up novel algorithmic skills following neetcode.io
+# Data-Structures-and-Algorithms
+
+1. Arrays and Hashing
+2. Graph
+3. Sliding Window
+4. Two Pointers

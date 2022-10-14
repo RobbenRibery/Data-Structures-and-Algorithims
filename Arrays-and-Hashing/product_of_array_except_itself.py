@@ -1,6 +1,7 @@
 from typing import List
-def productExceptSelf(nums:List[int]) -> List[int]: 
 
+
+def productExceptSelf(nums: List[int]) -> List[int]:
     """
     :type nums: List[int]
     :rtype: List[int]
@@ -25,31 +26,25 @@ def productExceptSelf(nums:List[int]) -> List[int]:
     - TC: 0(N-1) ~ O(N)
     - SC: 0(N) 
           OR 0(1) if discount the storage for the output array 
-    """ 
-    res = [1]*len(nums)
+    """
+    res = [1] * len(nums)
 
-    # left propogation 
-    for i in range(1,len(nums)): 
-        res[i] = res[i-1] * nums[i-1]
+    #  left propogation
+    for i in range(1, len(nums)):
+        res[i] = res[i - 1] * nums[i - 1]
 
     # right propogation 
     right_prod = nums[-1]
-    for i in range(len(nums)-2, -1, -1): 
-
+    for i in range(len(nums) - 2, -1, -1):
         res[i] *= right_prod
-        right_prod *= nums[i] 
+        right_prod *= nums[i]
 
-    return res 
+    return res
 
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
+    nums_1 = [1, 2, 3, 4]
+    nums_2 = [-1, 1, 0, -3, 3]
 
-    nums_1 = [1,2,3,4]
-    nums_2 = [-1,1,0,-3,3]
-    
     print(productExceptSelf(nums_1))
     print(productExceptSelf(nums_2))
-
-
-
-
