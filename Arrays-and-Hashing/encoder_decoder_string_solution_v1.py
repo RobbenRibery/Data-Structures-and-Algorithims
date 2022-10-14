@@ -1,10 +1,9 @@
-from operator import delitem
 from typing import List
 
 
 class Codec:
 
-    def encode(self, strs:List[str]) ->str:
+    def encode(self, strs: List[str]) -> str:
         """
         Encodes a list of strings to a single string.
         
@@ -14,15 +13,14 @@ class Codec:
         string = ''
         string_length = ''
         length = 0
-        for stri in strs: 
-
-            string += stri 
-            string_length += str(len(stri)) + '-' 
+        for stri in strs:
+            string += stri
+            string_length += str(len(stri)) + '-'
             length += len(stri)
-            
+
         res = string + string_length + str(length)
-        #print(f'encoder output {res}')
-        return res 
+        # print(f'encoder output {res}')
+        return res
 
     def decode(self, s):
         """
@@ -32,35 +30,35 @@ class Codec:
         :rtype: List[str]
         """
         res = [""]
-        
+
         # O(n)
         length = int(s.split('-')[-1])
 
-        # O(n)
+        #  O(n)
         string_length = s[length:-1]
         string_length = string_length.split('-')[:-1]
 
-        #print(string_length)
+        # print(string_length)
 
         string = s[:length]
-        #print(string)
-        
-        counter = 0 
-        for i in range(len(string_length)): 
+        # print(string)
 
-            if string_length[i] == str(0): 
+        counter = 0
+        for i in range(len(string_length)):
+
+            if string_length[i] == str(0):
                 res.append("")
-            else: 
-                res.append(string[counter: counter+int(string_length[i])])
+            else:
+                res.append(string[counter: counter + int(string_length[i])])
                 counter += int(string_length[i])
 
         return res[1:]
 
-if __name__ == "__main__": 
 
-    strs = ["Helllllllllllllllllo","World"] 
+if __name__ == "__main__":
+    strs = ["Helllllllllllllllllo", "World"]
     strs_1 = [""]
-    strs_2 = ["",""]
+    strs_2 = ["", ""]
 
     codec = Codec()
 

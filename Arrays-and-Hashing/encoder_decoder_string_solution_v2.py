@@ -1,10 +1,9 @@
-from curses.ascii import isdigit
-from distutils.log import error
 from typing import List
+
 
 class Codec:
 
-    def encode(self, strs:List[str]) ->str:
+    def encode(self, strs: List[str]) -> str:
         """
         Encodes a list of strings to a single string.
         
@@ -12,38 +11,36 @@ class Codec:
         :type: str
         """
         res = ''
-        
-        for str in strs: 
 
+        for str in strs:
             res += f"{len(str)}|{str}"
 
-        return res 
+        return res
 
-    def decode(self, s:str) -> List[str]:
+    def decode(self, s: str) -> List[str]:
 
         res = []
-        end = 0 
+        end = 0
         start = 0
-        while end < len(s): 
+        while end < len(s):
 
-            if s[end].isdigit(): 
-                end += 1 
+            if s[end].isdigit():
+                end += 1
 
-            else: 
+            else:
                 length = int(s[start:end])
-                res.append(s[end+1:end+1+length])
+                res.append(s[end + 1:end + 1 + length])
 
-                end += 1+length 
+                end += 1 + length
                 start = end
 
         return res
 
 
-if __name__ == "__main__": 
-
-    strs = ["Helllllllllllllllllo","World"] 
+if __name__ == "__main__":
+    strs = ["Helllllllllllllllllo", "World"]
     strs_1 = [""]
-    strs_2 = ["",""]
+    strs_2 = ["", ""]
 
     codec = Codec()
 
