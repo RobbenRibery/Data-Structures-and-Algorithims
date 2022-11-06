@@ -61,3 +61,25 @@ if __name__ == "__main__":
     sol = Solution()
 
     print(sol.minSubArrayLen_two_pointers(7,[2,3,1,2,4,3]))
+
+
+    """
+    [2,3,1,2,4,3]
+
+    sums = [0,2,5,7,8,12,15]
+
+    i = 0, nums[i] = 2 
+
+        - lower bound is 7+0 = 7 --> find the first number that's grater than or equal to 7
+
+            - binary search for the position of this number 
+
+    i = 1, nums[i] = 3, sums[i-1] = 2 
+
+        - lower bound is 7+2 = 9 --> find the first number that's grater than or equal to 9
+    
+    i = 2, nums[i] = 1, sums[i-1] = 5
+
+        - lower bound is 7+5 = 12 --> find the first number that's grater than or equal to 12
+    
+    """
