@@ -10,6 +10,9 @@ class Solution(object):
         :type k: int
         :type x: int
         :rtype: List[int]
+
+        0(K-n) solution
+
         """
         
         # determine if the numner is inside or outside the list 
@@ -24,6 +27,7 @@ class Solution(object):
 
                 ld = arr[li]-x
                 rd = arr[ri]-x 
+
 
                 if abs(ld)>abs(rd): 
                     li += 1 
