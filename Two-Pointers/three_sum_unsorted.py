@@ -126,6 +126,9 @@ class Solution(object):
 
         return res[1:]
 
+    def ThreeSum_hashset(self, nums, target): 
+        
+
 
 if __name__ == "__main__":
     nums_1 = [-1, 0, 1, 2, -1, -4]
