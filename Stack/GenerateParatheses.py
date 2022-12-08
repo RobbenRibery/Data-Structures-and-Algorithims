@@ -24,7 +24,6 @@ class Solution:
                 if Nopen > Nclose: 
 
                     stack.append(')')
-                    #print(stack)
                     backtrack(Nopen, Nclose+1)
                     stack.pop()
 
@@ -51,4 +50,4 @@ if __name__ == '__main__':
 
 
     sol = Solution()
-    print(sol.generateParenthesis(2))
+    print(sol.generateParenthesis(3))
