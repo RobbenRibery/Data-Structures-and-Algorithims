@@ -16,7 +16,6 @@ class Solution:
         def backtrack(Nopen:int, Nclose:int): 
 
             if Nopen == n and Nclose == n: 
-                #print(stack)
                 res.append("".join(stack))
                 return 
 

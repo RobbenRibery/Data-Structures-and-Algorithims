@@ -52,6 +52,9 @@ if __name__ == '__main__':
 
     output = sol.maxSlidingWindow(nums, k)
 
+    '''
+    IMPORTant feature about deque, empty deque will return Flase in the if statement 
+    '''
 
     deq = deque()
 
@@ -61,3 +64,5 @@ if __name__ == '__main__':
 
     else: 
         print('NO DEQUE')
+
+        
