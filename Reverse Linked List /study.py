@@ -16,22 +16,17 @@ class ListNode:
 
 
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
+    def test_1(self, head: ListNode) -> ListNode:
         if (not head) or (not head.next):
-            print(head)
+            #print(head)
             return head
         
+        #print(head)
+        p = self.test_1(head.next)
+        
+        head.next = p
         print(head)
-        p = self.reverseList(head.next)
-
-        print(f"Ouput {p} from the previous call stack")
-        print(f"Head value in the existing call stack:{head}")
-        head.next.next = head 
-        print(f"Modified {p} from ")
-        print(F"Head:{head}")
-        print(p)
-        print()
-        return p
+        return head
 
 
 if __name__ == "__main__": 
@@ -47,7 +42,7 @@ if __name__ == "__main__":
     print()
 
     s = Solution()
-    print(s.reverseList(
+    print(s.test_1(
         head = node5
     ))
 
